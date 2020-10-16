@@ -28,7 +28,7 @@ include('header.php');
 
                         <div  class="col-sm-4 ipic">
                             <div  class="iimage">
-                                <img class="ipic" width="360px" height="360px" alt="N/A" src="images/<?php echo $item_name;?>.png">                                  
+                                <img class="ipic" width="360px" height="360px" alt="N/A" src="images/Redmi Note 7.png">                                  
                             </div>                                
                         </div>
 
