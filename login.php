@@ -64,11 +64,10 @@ include('header.php');
 
                 var_dump($_SESSION["uemail"]);
 
-                header("Location:index.php");
-                // ob_start();
-                // header("Location:index.php");
-                // ob_clean();
-                // ob_end_flush();
+                 ob_start();
+                 header("Location:index.php");
+                 ob_clean();
+                 ob_end_flush();
             } else {
                 echo "<h1>login failed</h1>";
                 $_SESSION["logged_in"] = false;
