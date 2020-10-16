@@ -1,0 +1,177 @@
+
+.itempage{
+
+    background-color: rgb(248, 248, 248);
+    height: auto;
+}
+.ipic{
+
+    padding: 0px;
+}
+.idec{
+
+    padding: 0px;
+   
+}
+.iadd{
+
+    background-color: rgb(255, 241, 47);
+}
+
+.iimage{
+
+    width: 360px;
+    height: 360px;
+    margin : 10px;
+
+}
+
+.ipic{
+
+padding: 2px;
+
+}
+.idescription{
+
+margin : 10px;
+width: auto;
+height: auto;
+max-height: 100px;
+
+}
+
+div.idescription{
+    word-wrap: break-word;
+    overflow: hidden;
+    padding-bottom: 5px;
+
+}
+
+#inamedescription{
+
+    font-size: 22px;
+}
+.istar{
+
+    margin-left : 10px;
+    margin-right : 10px;
+    margin-bottom : 5px;
+    font-size: 15px;
+    width: 87px;
+    height: auto;
+    padding: 0px;
+}
+.ibrand{
+
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+}
+.iprice{
+
+    margin-left : 10px;
+    margin-right : 10px;
+    margin-bottom : 3px;
+    width: auto;
+    height: auto;
+    font-size: 25px;
+    font-weight: 500;
+    color: #ff8b1f;
+
+}
+.idesprice{
+    margin-left: 10px;
+    margin-right : 10px;
+    margin-bottom : 30px;
+    color: rgb(126, 126, 126);
+
+}
+
+.iquentity{
+
+    width: 173px;
+    height: 60px;
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+
+}
+#qnt{
+
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom : 20px;
+    width: 50px;
+    height: 40px;
+    border-radius: 2px;
+    position: absolute;
+    left : 13%;
+    text-align: center;
+}
+#buy{
+    clear: both;
+    outline: none; 
+    box-shadow: none;
+    font-size: 14px;
+}
+#cart{
+    clear: both;
+    outline: none; 
+    box-shadow: none;
+    font-size: 14px;
+}
+.iquen{
+
+    position: absolute;
+    background-color:#FFD61F;
+    outline: none;
+    box-shadow: none;
+    margin-right : 10px;
+    margin-bottom : 20px;
+    width: 50px;
+    height: 40px;
+    
+
+}
+.btnq2 {
+
+    left : 28%;
+
+}
+
+.ibuy{
+
+    display: inline;
+
+}
+
+.ibuynow{
+
+    background-color: rgb(255, 61, 61);
+    height: 45px;
+    width: 150px;
+    margin-right: 20px;
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+}
+.iaddtocart{
+
+    background-color: #11c511;
+    height: 45px;
+    width: 150px;
+    color: rgb(255, 255, 255);
+
+}
+.ibuynow:hover{
+
+    background-color: rgb(252, 30, 30);
+    color: rgb(255, 255, 255);
+}
+
+.iaddtocart:hover{
+
+    background-color: #0ee00e;
+    color: rgb(255, 255, 255); 
+}

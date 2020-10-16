@@ -1,0 +1,100 @@
+.loginform{
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: auto;
+    background-color: rgb(238, 238, 238);
+    padding: 10px;
+
+}
+
+
+.signmg{
+
+    
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 13px;
+
+}
+
+.signmg{
+
+    
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 13px;
+
+}
+
+.logindiv{
+
+    width: auto;
+    height: auto;
+    margin: 20px;
+    margin-bottom: -15px;
+
+
+}
+.signinbtn{
+
+    margin-bottom: 10spx;
+}
+
+.loginagree{
+
+    position: relative;
+    margin: 10px;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    
+
+
+}
+.loginagree1{
+
+    position: relative;
+    margin: 10px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    font-size: 14px;
+
+
+}
+.size{
+
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#inputEmail{
+    clear: both;
+    outline: none; 
+    box-shadow: none;
+    font-size: 14px;
+}
+#inputPassword{
+    clear: both;
+    outline: none; 
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.singinmg{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    color: rgb(87, 87, 87);
+}
+.welcomeloin{
+
+    padding: 5px;
+    margin-bottom: 10px;
+
+}

@@ -1,0 +1,229 @@
+
+.cartname{
+
+    background-color: rgb(238, 238, 238);
+    width: 66.5%;
+    height: 80px;
+    position: relative;
+    left: -1.5%;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 17px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+
+
+
+}
+
+
+.order{
+
+    padding: 20px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.subtotal{
+
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+
+}
+
+.spce{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.line{
+    height: 1px;
+    width: auto;
+    background-color: rgb(150, 150, 150);
+    margin: 10px;
+    margin-top: 5px;
+}
+.total{
+
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.checkoutbtn{
+
+    width: auto;
+    height: 30px;
+    margin-right: 20px;
+
+}
+.checkout_btn{
+
+    background-color: #11c511;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+.uitem{
+
+    background-color: rgb(238, 238, 238);
+    width: 140px;
+    height: 140px;
+    margin-left: -20px;
+    border-radius: 5px,0px,0px,5px;
+}
+
+.uimg{
+
+margin: 5px;
+
+
+}
+.uitemimg{
+    border-radius: 20px;
+
+}
+
+
+.udec{
+
+    background-color: rgb(238, 238, 238);
+}
+.udectxt{
+    margin: 10px;
+    margin-top: 18px;
+    font-weight: bold;
+    width: auto;
+    max-height: 70px;
+}
+p.udectxt{
+
+    overflow: hidden;
+
+
+}
+.udectxtbrand{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: rgb(83, 83, 83);
+}
+
+
+.uitem-price{
+    background-color: rgb(238, 238, 238);
+    width: 150px;
+    
+}
+.uiprice{
+
+ margin: 5px;
+ margin-top: 20px;
+ font-size: 20px;
+ text-align: center;
+ margin-bottom: 20px;
+    
+}
+
+.cpricedel{
+    width: auto;
+    height: auto;
+    margin-top: 30px;
+
+}
+
+
+.uque{
+    background-color: rgb(238, 238, 238);
+}
+
+.ciquen{
+
+    position: absolute;
+    margin-left: 0px;
+    background-color: #FFD61F;
+    height: 30px;
+    width: 30px;
+    padding: 1px;
+    top: 40%;
+    left:15%;
+
+}
+
+.uqnt {
+
+    position: absolute;
+    left: 39%;
+    top: 40%;
+    outline: none;
+    box-shadow: none;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    
+
+}
+
+.btn2{
+
+    position: absolute;
+    left: 68%;
+    top: 40%;
+
+}
+
+#button1{
+    clear: both;
+    outline: none; 
+    box-shadow: none;
+}
+
+
+
+.nothing{
+
+    background-color:transparent;
+    height: 50;
+    margin-right: -20px;
+    margin-left: 20px;
+
+}
+
+.checkout{
+
+    background-color: rgb(238, 238, 238);
+    height: 320px;
+    width: 380px;
+    margin-right: 45px;
+    right: 0;
+
+}
+
+div.checkout{
+
+    position: absolute;
+    right: 50px;
+    top: 164px;
+}
+
+.rowcolor{
+
+    margin-bottom: 10px;
+
+}

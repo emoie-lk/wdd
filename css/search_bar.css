@@ -1,0 +1,59 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+#search{
+
+padding-top: 20px;
+padding-bottom: 20px;
+
+}
+
+.searchtext{
+
+   position: absolute;
+   top: 25%;
+}
+
+.searchbtn{
+
+    position: absolute;
+    top: 25%;
+    right: 4%;
+}
+
+#textfield{
+
+    width: 80%;
+    clear: both;
+    outline: none; 
+    box-shadow: none;
+}
+#btn{
+
+    background-color:#FFD61F;
+    color: rgb(109, 109, 109);
+    outline: none;
+    border: 1px #FFD61F solid;
+    box-shadow: none;
+}
+
+.cart{
+
+    position: relative;
+    margin: auto;
+    left: 7%;
+    top: 6%;
+
+}
+.securelogo{
+
+    position: relative;
+    margin: auto;
+    left: 25%;
+    top: 0%;  
+}
+
+
+
+
