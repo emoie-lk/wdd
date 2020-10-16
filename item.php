@@ -14,6 +14,8 @@ require_once('dbconn.php');
         if(isset($_GET["itemid"])){
 
             $id = $_GET["itemid"];
+            
+            echo $id;
 
             $sql = "SELECT `item_code`, `brand`, `item_name`,`description`, `warrenty`, `quantites`, `price`,`discount_price` FROM tbl_items WHERE item_code = ?";
             $stmt = mysqli_prepare($conn, $sql);
