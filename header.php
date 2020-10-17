@@ -126,7 +126,7 @@ require_once('dbconn.php');
       ?>
 
         <li class="nav-item">
-          <a class="nav-link colo" href="alogin.php">LOGIN</a>
+          <a class="nav-link colo" href="login.php">LOGIN</a>
         </li> 
 
         <li class="nav-item">
