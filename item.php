@@ -60,18 +60,56 @@ include('header.php');
                                 <lable class ="rprice"><del>Rs. <?php echo $price ?></del></lable>
                             </div>
 
+                    
+
+                        <!--------------------------------------------->
+                            <div class="iquentity">
+                                <button id="btn-" class="btn btn-default iquen" type="submit"> - </button>
+                                <input id="qnt" class="form-control mr-sm-2" type="numbers" value="1" min="1" max=<?php echo $quantites?>>
+                                <button id ="btn+" class="btn btn-default iquen btnq2" type="submit"> + </button>      
+                            </div>
+
+                            <script>
+
+                                document.getElementById("btn-").onclick = function(){
+
+                                    var x = document.getElementById("qnt").value;
+                                    let y = eval(x)
+                                    var z = 1;                                  
+                                    
+                                    txt = (y - z);
+
+                                        if( txt <= 0){
+                                        
+                                        }else{
+                                            document.getElementById("qnt").value = txt;
+                                        }
+                                }
+
+
+                                document.getElementById("btn+").onclick = function(){
+
+                                    qnt = document.getElementById("qnt").max;
+                                    var x = document.getElementById("qnt").value;
+                                    let y = eval(x)
+                                    var z = 1;
+
+                                    txt = (y + z);                                    
+
+                                        if( txt > qnt){
+                                        
+                                        }else{
+                                            document.getElementById("qnt").value = txt;
+                                        }
+                                }
+
+                            </script>
+
                     <?php
                     }
                 }
         }
         ?>
-
-                        <!--------------------------------------------->
-                            <div class="iquentity">
-                                <button  class="btn btn-default iquen" type="submit"> + </button>
-                                <input id="qnt" class="form-control mr-sm-2" type="numbers" value="1">
-                                <button  class="btn btn-default iquen btnq2" type="submit"> - </button>      
-                            </div>
 
                         <!--------------------------------------------->
                             <div class="ibuy">
