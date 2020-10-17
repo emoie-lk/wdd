@@ -11,7 +11,7 @@ include('header.php');
 <div class="loginform">
     <div class="logindiv">
             
-        <form class="form-signin" action="login.php" method="post">
+        <form class="form-signin" action="alogin.php" method="post">
         <p class="signmg">Email*</p>
         <input type="email" name="u-email" id="inputEmail" class="form-control loginemail" placeholder="Email address" required autofocus>
         <p class="signmg">Password*</p>
