@@ -1,0 +1,44 @@
+.headpay{
+
+    width: auto;
+    margin-bottom: 30px;
+}
+.payheadtext{
+
+    text-align: left;
+    margin-left: 50px;
+    font-size: 25px;
+}
+.paydiv{
+
+    margin-left: 15%;
+
+}
+.navbarpay{
+
+    position: relative;
+    margin-bottom: 50px;
+
+    
+}
+.paymethod{
+
+padding-right: 15px;
+padding-top: 10px;
+font-weight: bold;
+
+} 
+.paymethoddiv{
+
+    padding-top: 20px;
+}
+.khfgdg{
+
+    padding:20px;
+    text-align: center;
+}
+.lefert{
+
+    padding-left: 30px;
+
+}

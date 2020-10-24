@@ -27,9 +27,24 @@ require_once('dbconn.php');
 
   </div>
 
+  <!-------------------------Item details--------------------------->
+  <?php
+    $sql = "SELECT i.discount_price, c.quantity FROM tbl_items i INNER JOIN tbl_cart c ON i.item_code = c.item_code;";
+    $stmt = mysqli_prepare($conn, $sql);
+    $res = mysqli_stmt_execute($stmt);
+    if($res){
+    mysqli_stmt_bind_result($stmt, $discount_price, $quantity); ?>
+
+        <?php
+        while(mysqli_stmt_fetch($stmt)){    
+
+      @$tot += $discount_price * $quantity; 
+      }
+  } ?>  
+
   <div class="subtotal">
   
-     <p class="spce" >Subtotal  : Rs. 15200.00 </p> <br/> 
+     <p class="spce" >Subtotal  : Rs.<?php echo $tot?> </p> <br/> 
      <p class="spce" >Shipping  : Free </p>
   </div>
 
@@ -37,14 +52,15 @@ require_once('dbconn.php');
 
   <div class="subtotal total">
   
-     <p  >Total  : Rs. 15200.00 </p>
+     <p  >Total  : Rs.<?php echo $tot?></p>
 
   </div>
 
   <div class="checkoutbtn">
      
-      <button type="button" class="btn btn-default btn-block checkout_btn">PROCEED TO CHECKOUT</button>
-
+    <form class="form-signin" action="cart.php" method="post">
+      <button name="checkoutcart" type="submit" class="btn btn-default btn-block checkout_btn">PROCEED TO CHECKOUT</button>
+    </form>
   </div>
   
 
@@ -56,8 +72,7 @@ require_once('dbconn.php');
 
 
 <?php
-//$sql = "SELECT `item_code`, `quantity` FROM tbl_cart";
-//$sql = "SELECT d.name, s.subject FROM staff d INNER JOIN subject s ON d.staff_id = s.staff_id;";
+
 $sql = "SELECT i.brand, i.item_code, i.description, i.item_name, i.discount_price, c.quantity FROM tbl_items i INNER JOIN tbl_cart c ON i.item_code = c.item_code;";
 $stmt = mysqli_prepare($conn, $sql);
 
@@ -69,7 +84,10 @@ if($res){
 
 <?php
 while(mysqli_stmt_fetch($stmt)){    
+
 ?>
+
+
           
 <div class="container rowcolor">  
   <div class="row">
@@ -133,6 +151,23 @@ while(mysqli_stmt_fetch($stmt)){
   <?php  
     }
 }
+?>
+
+
+<?php
+
+if(isset($_POST["checkoutcart"])){
+
+  $_SESSION["order_id"] = date("dmYhis");
+
+  ob_start();
+  header("Location:checkout.php");
+  ob_clean();
+  ob_end_flush();
+}
+?>
+
+
 ?>
 
 

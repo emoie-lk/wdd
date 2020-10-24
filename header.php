@@ -5,6 +5,46 @@ require_once('dbconn.php');
 
 ?>
 
+
+<!----------------------Checking loging details in cookies------------------------------>
+<?php
+    if(isset($_COOKIE["u-password"])) {
+        
+        $email = $_COOKIE["u-email"];
+        $password = $_COOKIE["u-password"];
+        
+        $sql = "SELECT * FROM `tbl_customer` WHERE `email`=? AND `password`=?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        $res = mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $customer_id, $email, $password, $full_name, $phone, $gender);
+        if($res){
+            mysqli_stmt_store_result($stmt);
+            $num_rows = mysqli_stmt_affected_rows($stmt);
+            if($num_rows > 0){
+
+                while(mysqli_stmt_fetch($stmt)){
+                    $_SESSION["customer_id"] = $customer_id;
+                    $_SESSION["email"] = $email;
+                    $_SESSION["password"] = $password;
+                    $_SESSION["full_name"] = $full_name;
+                    $_SESSION["phone"] = $phone;
+                    $_SESSION["gender"] = $gender;
+                    $_SESSION["gender"] = $gender;
+                    $_SESSION["logged_in"] = true;
+                    $_SESSION["greentheme"] = $gender;;
+                }
+            } else {
+                $_SESSION["logged_in"] = false;
+            }
+        } else {
+            $_SESSION["logged_in"] = false;
+        }
+    }
+?>
+<!---------------------------------------------------------------------------------------->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +64,8 @@ require_once('dbconn.php');
     <link rel="stylesheet"  href="css/footer.css">
     <link rel="stylesheet"  href="css/cart.css">
     <link rel="stylesheet"  href="css/login.css">
+    <link rel="stylesheet"  href="css/checkout.css" >
+    <link rel="stylesheet"  href="css/payment.css" >
 
     <!----------Themes----------->
     <?php if(isset($_SESSION['greentheme'])){ ?>  
@@ -48,14 +90,32 @@ require_once('dbconn.php');
     </div>
 
     <div class="col-sm-6">
-      <form class="form-inline my-2 my-lg-0">
-        <input id = "textfield" class="form-control mr-sm-2 searchtext" type="search" placeholder="Search" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" action="index.php" method="get">
+        <input name="searchbar" id = "searchtextfield" class="form-control mr-sm-2 searchtext" type="search" placeholder="Search" aria-label="Search">
         <button id = "btn" class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Search</button>
       </form>
     </div>
 
+    <?php
+        $query = "SELECT  `item_code` FROM `tbl_cart`"; 
+        $result = mysqli_query($conn, $query);   
+        if ($result) 
+        { 
+            $row = mysqli_num_rows($result); 
+                if ($row) { 
+                    $tot = 0;
+                    $rowse = $row; 
+                    $count = $tot + $rowse;
+                } 
+        } 
+        ?>
+
     <div class="col-sm mn">
+      
       <a class="cart" href="cart.php"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm9.804-16.5l-3.431 12h-2.102l2.542-9h-5.993c.113.482.18.983.18 1.5 0 3.59-2.91 6.5-6.5 6.5-.407 0-.805-.042-1.191-.114l1.306 3.114h13.239l3.474-12h1.929l.743-2h-4.196zm-6.304 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm-4.5-10.5c0 2.485-2.018 4.5-4.5 4.5-2.484 0-4.5-2.015-4.5-4.5s2.016-4.5 4.5-4.5c2.482 0 4.5 2.015 4.5 4.5zm-2-.5h-2v-2h-1v2h-2v1h2v2h1v-2h2v-1z"/></svg> </a>
+      <div class="countitem">
+        <p ><?php echo $count?></p>
+      </div>
       <img class="securelogo" class="item-img" width="145px" height="65px" alt="N/A" src="images/payment.png">    
     </div>
 
@@ -68,23 +128,23 @@ require_once('dbconn.php');
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       
-      <li class="nav-item categiri">
+      <li class="nav-item navall categiri">
         <div class="dropdown">      
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES</a>   
             <div class="dropdown-menu">
 
               <?php
-              $sql = "SELECT `category_name` FROM tbl_cate";
+              $sql = "SELECT `category_id`,`category_name` FROM tbl_cate";
               $stmt = mysqli_prepare($conn, $sql);
               $res = mysqli_stmt_execute($stmt);
               if($res){
-                mysqli_stmt_bind_result($stmt, $category_name); 
+                mysqli_stmt_bind_result($stmt, $category_id, $category_name); 
               ?>
 
                 <?php
                 while(mysqli_stmt_fetch($stmt)){    
                 ?>
-                  <a class="dropdown-item"  href="#"><?php echo $category_name;?></a>
+                  <a class="dropdown-item"  href="index.php? categoriyid=<?php echo $category_id?>"><?php echo $category_name;?></a>
 
                 <?php  
                 }
@@ -95,11 +155,11 @@ require_once('dbconn.php');
         </div>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item navall">
         <a class="nav-link colo" href="#">HOT DEALS</a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item navall">
         <a class="nav-link colo" href="#">SERVICE CENTRES</a>
       </li>
 
@@ -108,7 +168,7 @@ require_once('dbconn.php');
       if(isset($_SESSION["email"])){ 
       ?>
           
-        <li class="nav-item categiri maxwidth ">        
+        <li class="nav-item navall categiri maxwidth ">        
           <div class="dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION ["full_name"]?></a>
               <div class="dropdown-menu">
@@ -125,11 +185,11 @@ require_once('dbconn.php');
       } else { 
       ?>
 
-        <li class="nav-item">
+        <li class="nav-item navall">
           <a class="nav-link colo" href="login.php">LOGIN</a>
         </li> 
 
-        <li class="nav-item">
+        <li class="nav-item navall">
           <a class="nav-link colo" href="#">SIGNUP</a>
         </li>
 

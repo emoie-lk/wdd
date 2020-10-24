@@ -1,5 +1,5 @@
 <?php
-    session_start();
+
     require_once('dbconn.php');
     include('header.php');
     
@@ -10,7 +10,28 @@ if(isset($_SESSION["email"])){
 } else {
     echo "Ivalid access";
 }
+?>
 
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active paymethod" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"> Home</a>
+    <a class="nav-item nav-link paymethod" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> Profile</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+</div>
+
+
+
+
+
+
+<?php
 
     include('footer.php');
     

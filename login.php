@@ -12,18 +12,16 @@ include('header.php');
     <div class="logindiv">
             
         <form class="form-signin" action="login.php" method="post">
-        <p class="signmg">Email*</p>
-        <input type="email" name="u-email" id="inputEmail" class="form-control loginemail" placeholder="Email address" required autofocus>
-        <p class="signmg">Password*</p>
-        <input type="password" name="u-password" id="inputPassword" class="form-control loginemail" placeholder="Password" required>
-        <div class="checkbox mb-3 size">
-            <label>
-            <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button name="btn-signin" class="btn btn-primary btn-block signinbtn" type="submit">Sign in</button>
-        <p class="loginagree"><a  href="forgotpassword.php"> Forgot Password? </a></p>
-        <p class="loginagree1"><a  href="forgotpassword.php"> New Member? </a></p>
+            <p class="signmg">Email*</p>
+            <input type="email" name="u-email" id="inputEmail" class="form-control loginemail" placeholder="Email address" required autofocus>
+            <p class="signmg">Password*</p>
+            <input type="password" name="u-password" id="inputPassword" class="form-control loginemail" placeholder="Password" required>
+            <div class="checkbox mb-3 size">
+                <label><input  name="u-rememberme" type="checkbox" value="remember-me"> Remember me</label>
+            </div>
+            <button name="btn-signin" class="btn btn-primary btn-block signinbtn" type="submit">Sign in</button>
+            <p class="loginagree"><a  href="forgotpassword.php"> Forgot Password? </a></p>
+            <p class="loginagree1"><a  href="forgotpassword.php"> New Member? </a></p>
         </form>
 
     </div>
@@ -46,7 +44,7 @@ include('header.php');
             mysqli_stmt_store_result($stmt);
             $num_rows = mysqli_stmt_affected_rows($stmt);
             if($num_rows > 0){
-                //echo "<h1>login success</h1>";
+
                 while(mysqli_stmt_fetch($stmt)){
                     $_SESSION["customer_id"] = $customer_id;
                     $_SESSION["email"] = $email;
@@ -56,19 +54,21 @@ include('header.php');
                     $_SESSION["gender"] = $gender;
                     $_SESSION["gender"] = $gender;
                     $_SESSION["logged_in"] = true;
-                    $_SESSION["greentheme"] = $gender;;
+                    $_SESSION["greentheme"] = $gender;
 
-                    var_dump($uemail);
+                    
+
+                    if(!empty($_POST["u-rememberme"])) {
+                        setcookie ("u-email",$_POST["u-email"],time()+ (86400 * 30), "/");
+                        setcookie ("u-password",$_POST["u-password"],time()+ (86400 * 30), "/");
+                    }
 
                 }
 
-                var_dump($_SESSION["uemail"]);
-
+                ob_start();
                 header("Location:index.php");
-                // ob_start();
-                // header("Location:index.php");
-                // ob_clean();
-                // ob_end_flush();
+                ob_clean();
+                ob_end_flush();
             } else {
                 echo "<h1>login failed</h1>";
                 $_SESSION["logged_in"] = false;

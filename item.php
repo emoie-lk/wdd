@@ -29,7 +29,7 @@ include('header.php');
 
                         <div  class="col-sm-4 ipic">
                             <div  class="iimage">
-                                <img class="ipic" width="360px" height="360px" alt="N/A" src="images/<?php echo $item_name;?>.png">                                  
+                                <img class="ipic" width="300px" height="300px" alt="N/A" src="images/<?php echo $item_name;?>.png">                                  
                             </div>                                
                         </div>
 
@@ -86,7 +86,6 @@ include('header.php');
                                         }
                                 }
 
-
                                 document.getElementById("btn+").onclick = function(){
 
                                     qnt = document.getElementById("qnt").max;
@@ -126,17 +125,6 @@ include('header.php');
 
     </div>
 </div><br/> 
-
-
-
-
-
-
-
-
-
-
-
 
 
 
