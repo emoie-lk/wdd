@@ -22,9 +22,9 @@ padding-bottom: 20px;
     right: 4%;
 }
 
-#searchtextfield{
+#textfield{
 
-    width: 77%;
+    width: 80%;
     clear: both;
     outline: none; 
     box-shadow: none;
@@ -44,12 +44,6 @@ padding-bottom: 20px;
     margin: auto;
     left: 7%;
     top: 6%;
-
-}
-.countitem{
-    position: absolute;
-    color: white;
-    background-color: yellowgreen;
 
 }
 .securelogo{
