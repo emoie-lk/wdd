@@ -84,14 +84,14 @@ require_once('dbconn.php');
       <a href="index.php"> <img  class="item-img" width="208px" height="57px" alt="N/A" src="images/logo.png"> </a>
 
     </div>
+
     <div class="col-sm-6">
-
-          <form class="form-inline my-2 my-lg-0">
-            <input id = "textfield" class="form-control mr-sm-2 searchtext" type="search" placeholder="Search" aria-label="Search">
-            <button id = "btn" class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Search</button>
-          </form>
-
+      <form class="form-inline my-2 my-lg-0" method="get" action="index.php">
+        <input name="searchbar" id = "textfield" class="form-control mr-sm-2 searchtext" type="search" placeholder="Search">
+        <button id = "btn" class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Search</button>
+      </form>
     </div>
+
     <div class="col-sm mn">
   
 
@@ -120,24 +120,23 @@ require_once('dbconn.php');
             <div class="dropdown-menu">
 
 
-        <?php
-        $sql = "SELECT `category_name` FROM tbl_cate";
-        $stmt = mysqli_prepare($conn, $sql);
+              <?php
+              $sql = "SELECT `category_name` FROM tbl_cate";
+              $stmt = mysqli_prepare($conn, $sql);
+              $res = mysqli_stmt_execute($stmt);
+              if($res){
+                mysqli_stmt_bind_result($stmt, $category_name); ?>
 
-        $res = mysqli_stmt_execute($stmt);
-        if($res){
-          mysqli_stmt_bind_result($stmt, $category_name); ?>
-
-          <?php
-          while(mysqli_stmt_fetch($stmt)){    
-          ?>
+                <?php
+                while(mysqli_stmt_fetch($stmt)){    
+                ?>
 
                     <a class="dropdown-item"  href="#"><?php echo $category_name;?></a>
 
                   <?php  
-            }
-        }
-        ?>               
+                  }
+              }
+              ?>               
 
             </div>
       </div>
