@@ -92,7 +92,7 @@ require_once('dbconn.php');
     </div> -->
 
     <div class="col-6 col-md-6 col-lg- col-xl-6">
-      <form class="form-inline my-2 my-lg-0" method="get" action="index.php">
+      <form class="form-inline my-2 my-lg-0" method="get" action="searchproducts.php">
         <input name="searchbar" id = "textfield" class="form-control mr-sm-2 searchtext" type="search" placeholder="Search">
         <button id = "btn" class="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit">Search</button>
       </form>
@@ -130,20 +130,21 @@ require_once('dbconn.php');
 
 
               <?php
-              $sql = "SELECT `category_name` FROM tbl_cate";
+              $sql = "SELECT `category_id`,`category_name` FROM tbl_cate";
               $stmt = mysqli_prepare($conn, $sql);
               $res = mysqli_stmt_execute($stmt);
               if($res){
-                mysqli_stmt_bind_result($stmt, $category_name); ?>
+                mysqli_stmt_bind_result($stmt, $category_id, $category_name); 
+              ?>
 
                 <?php
                 while(mysqli_stmt_fetch($stmt)){    
                 ?>
 
-                    <a class="dropdown-item"  href="#"><?php echo $category_name;?></a>
+                  <a class="dropdown-item"  href="searchproducts.php? categoriyid=<?php echo $category_id?>"><?php echo $category_name;?></a>
 
-                  <?php  
-                  }
+                <?php  
+                }
               }
               ?>               
 

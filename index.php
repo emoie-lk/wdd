@@ -1,9 +1,10 @@
 <?php
 
-include('header.php');
 require_once('dbconn.php');
+include('header.php');
 
 ?>
+
 <div class="container">
 <div class="row justify-content-md-center">
   <div id="carouselExampleIndicators" class="col-sm- col-md- col-lg- col-xl- carousel slide" data-ride="carousel">
@@ -15,16 +16,16 @@ require_once('dbconn.php');
       </ol>
       <div class="carousel-inner">
           <div class="carousel-item active">
-          <img class="d-block w-100" src="images/imghome.png" width="auto" height="300px" alt="First slide">
+          <img class="d-block w-100" src="images/imghome.png" width="auto" height="auto" alt="First slide">
           </div>
           <div class="carousel-item">
-          <img class="d-block w-100" src="images/imghome1.png" width="auto" height="300px" alt="Second slide">
+          <img class="d-block w-100" src="images/imghome1.png" width="auto" height="auto" alt="Second slide">
           </div>
           <div class="carousel-item">
-          <img class="d-block w-100" src="images/imghome2.png" width="auto" height="300px" alt="Third slide">
+          <img class="d-block w-100" src="images/imghome2.png" width="auto" height="auto" alt="Third slide">
           </div>
           <div class="carousel-item">
-          <img class="d-block w-100" src="images/imghome3.png" width="auto" height="300px" alt="Fourth slide">
+          <img class="d-block w-100" src="images/imghome3.png" width="auto" height="auto" alt="Fourth slide">
           </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
