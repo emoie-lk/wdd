@@ -15,7 +15,7 @@ include('header.php');
     if(isset($_GET["itemid"])){
         $id = $_GET["itemid"];
 
-        $sql = "SELECT `item_code`, `brand`, `item_name`,`description`, `warrenty`, `quantites`, `price`,`discount_price` FROM tbl_items WHERE item_code = ?";
+        $sql = "SELECT `item_code`, `brand`, `item_name`,`description`, `warrenty`, `quantites`, `price`,`discount_price` FROM `tbl_items` WHERE `item_code` = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "i", $id);
         $result = mysqli_stmt_execute($stmt);
