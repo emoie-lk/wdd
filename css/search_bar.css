@@ -4,8 +4,8 @@ html {
   
 #search{
 
-padding-top: 20px;
-padding-bottom: 20px;
+padding-top: 1%;
+padding-bottom: 1%;
 
 }
 
@@ -19,12 +19,12 @@ padding-bottom: 20px;
 
     position: absolute;
     top: 25%;
-    right: 4%;
+    right: 0%;
 }
 
 #textfield{
 
-    width: 80%;
+    width: 83%;
     clear: both;
     outline: none; 
     box-shadow: none;
@@ -41,9 +41,12 @@ padding-bottom: 20px;
 .cart{
 
     position: relative;
-    margin: auto;
-    left: 7%;
-    top: 6%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 4%;
+    margin-right: -4%;
+
+    
 
 }
 .securelogo{
@@ -54,6 +57,17 @@ padding-bottom: 20px;
     top: 0%;  
 }
 
+.item-img{
 
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
 
+}
+.seclogo{
+
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
