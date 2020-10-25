@@ -100,7 +100,7 @@ require_once('dbconn.php');
 
     <div class="col-1 col-md-1 col-lg col-xl-1 cart">
 
-      <a class="cart" href="cart.php"><img  class="item-img" width="50%" height="auto" alt="N/A" src="images/cart.png"></a>
+      <a href="cart.php"><img  class="item-img" width="50%" height="auto" alt="N/A" src="images/cart.png"></a>
 
     </div>
 
