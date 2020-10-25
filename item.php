@@ -29,7 +29,7 @@ include('header.php');
 
                         <div  class="iimage">
 
-                        <img class="ipic" width="360px" height="360px" alt="N/A" src="images/<?php echo $item_name;?>.PNG">
+                        <img class="ipic" width="360px" height="360px" alt="N/A" src="images/<?php echo $item_name;?>.png">
                                 
                         </div>
                             
@@ -78,13 +78,46 @@ include('header.php');
                     ?>
 
                     <!--------------------------------------------->
-                        <div class="iquentity">
+                    <div class="iquentity">
+                                <button id="btn-" class="btn btn-default iquen" type="submit"> - </button>
+                                <input id="qnt" class="form-control mr-sm-2" type="numbers" value="1" min="1" max=<?php echo $quantites?>>
+                                <button id ="btn+" class="btn btn-default iquen btnq2" type="submit"> + </button>      
+                            </div>
 
-                            <button  class="btn btn-default iquen" type="submit"> + </button>
-                            <input id="qnt" class="form-control mr-sm-2" type="numbers" value="1">
-                            <button  class="btn btn-default iquen btnq2" type="submit"> - </button>
+                            <script>
+
+                                document.getElementById("btn-").onclick = function(){
+
+                                    var x = document.getElementById("qnt").value;
+                                    let y = eval(x)
+                                    var z = 1;                                  
                                     
-                        </div>
+                                    txt = (y - z);
+
+                                        if( txt <= 0){
+                                        
+                                        }else{
+                                            document.getElementById("qnt").value = txt;
+                                        }
+                                }
+
+                                document.getElementById("btn+").onclick = function(){
+
+                                    qnt = document.getElementById("qnt").max;
+                                    var x = document.getElementById("qnt").value;
+                                    let y = eval(x)
+                                    var z = 1;
+
+                                    txt = (y + z);                                    
+
+                                        if( txt > qnt){
+                                        
+                                        }else{
+                                            document.getElementById("qnt").value = txt;
+                                        }
+                                }
+
+                            </script>
 
                     <!--------------------------------------------->
                         <div class="ibuy">
