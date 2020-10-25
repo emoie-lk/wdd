@@ -3,8 +3,8 @@
 
     <div class="bandandpayments">
 
-    <img class="payment"  width="25%" height="auto"alt="N/A" src="images/payment_logos.PNG"> 
-    <img class="payment"  width="60%" height="auto" alt="N/A" src="images/banklogo.PNG">
+    <img class="payment"  width="25%" height="auto"alt="N/A" src="images/payment_logos.png"> 
+    <img class="payment"  width="60%" height="auto" alt="N/A" src="images/banklogo.png">
 
     </div>
 
