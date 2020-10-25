@@ -6,7 +6,7 @@ require_once('dbconn.php');
 ?>
 <div class="container">
 <div class="row justify-content-md-center">
-  <div id="carouselExampleIndicators" class="col col-lg-12 carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="col-sm- col-md- col-lg- col-xl- carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -50,13 +50,13 @@ require_once('dbconn.php');
 
                       <!--Item panel -->
                       <div class="container">
-                      <div class="row">
+                      <div class="row justify-content-center">
 
           <?php
           while(mysqli_stmt_fetch($stmt)){    
           ?>
 
-                      <div id ="col" class="col- itme"> <a class="itemlink" href="item.php? itemid=<?php echo $item_code;?>"> 
+                      <div class="col- col-sm- col-md- col-lg- col-xl- itme"> <a class="itemlink" href="item.php? itemid=<?php echo $item_code;?>"> 
               
                         <div class="img-box">
                           <img class="item-logo" width="180px" height="180px" alt="N/A" src="images/<?php echo $item_name;?>.PNG">
