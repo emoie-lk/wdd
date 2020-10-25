@@ -16,16 +16,16 @@ include('header.php');
       </ol>
       <div class="carousel-inner">
           <div class="carousel-item active">
-          <img class="d-block w-100" src="images/imghome.png" width="auto" height="auto" alt="First slide">
+          <img class="d-block w-100" src="images/imghome.png" width="auto" height="280px" alt="First slide">
           </div>
           <div class="carousel-item">
-          <img class="d-block w-100" src="images/imghome1.png" width="auto" height="auto" alt="Second slide">
+          <img class="d-block w-100" src="images/imghome1.png" width="auto" height="280px" alt="Second slide">
           </div>
           <div class="carousel-item">
-          <img class="d-block w-100" src="images/imghome2.png" width="auto" height="auto" alt="Third slide">
+          <img class="d-block w-100" src="images/imghome2.png" width="auto" height="280px" alt="Third slide">
           </div>
           <div class="carousel-item">
-          <img class="d-block w-100" src="images/imghome3.png" width="auto" height="auto" alt="Fourth slide">
+          <img class="d-block w-100" src="images/imghome3.png" width="auto" height="280px" alt="Fourth slide">
           </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

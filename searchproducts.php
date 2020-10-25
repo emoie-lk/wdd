@@ -66,7 +66,7 @@ include('header.php');
                       <div id ="col" class="col- itme"> <a class="itemlink" href="item.php? itemid=<?php echo $item_code;?>"> 
               
                         <div class="img-box">
-                          <img class="item-logo" width="180px" height="180px" alt="N/A" src="images/<?php echo $item_name;?>.PNG">
+                          <img class="item-logo" width="180px" height="180px" alt="N/A" src="images/<?php echo $item_name;?>.png">
                         </div>
 
                         <div class="itm-des">
